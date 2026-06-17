@@ -1,0 +1,22 @@
+name: Build Jarvis APK
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Android App with Buildozer
+        uses: ArtemSBulgakov/buildozer-action@v1
+        with:
+          command: yes | buildozer android debug
+          buildozer_version: master
+
+      - name: Upload Finished APK File
+        uses: actions/upload-artifact@v4
+        with:
+          name: Jarvis-Package
+          path: bin/*.apk
+          

@@ -13,6 +13,7 @@ android.permissions = INTERNET, FOREGROUND_SERVICE, RECORD_AUDIO, WAKE_LOCK
 android.api = 33
 android.minapi = 21
 android.ndk_api = 21
+android.ndk = 25c
 android.private_storage = True
 android.services = jarvis:jarvis_service.py
 
